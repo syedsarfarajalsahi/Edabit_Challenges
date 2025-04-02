@@ -4,7 +4,6 @@
 
 void not_not_not_true(int number_of_times, char true_or_false[])
 {
-
     int is_even = (number_of_times % 2) ? 0 : 1;
     if (strcmp(true_or_false, "true") == 0)
         printf("%s", is_even ? "true" : "false");
