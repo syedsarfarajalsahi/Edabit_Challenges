@@ -1,6 +1,6 @@
 def addition(num1, num2): 
-    sum = num1+num2
-    print(sum)
+    result = num1+num2
+    print(result)
 
 
 addition(2, 4)
