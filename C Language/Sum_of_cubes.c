@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-// for now i'll do it with 3 element in the parameter array
+// for now i'll do it with 3 elements in the parameter array
 // i'll do it with variable length later
 int sum_of_cubes(int array[3])
 {
