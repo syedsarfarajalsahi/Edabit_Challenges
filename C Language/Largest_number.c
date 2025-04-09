@@ -1,24 +1,10 @@
 // Largest numbers
 #include <stdio.h>
+#include <limits.h>
+#include <stdbool.h>
 
-void sort_array(int num_arr[], int size)
-{
-    if (num_arr == NULL || size <= 0) return;
-
-    for (int i = 0; i < size - 1; i++) {
-        for (int j = 0; j < size - 1 - i; j++) {
-            if (num_arr[j] > num_arr[j + 1]) {
-                int temp = num_arr[j];
-                num_arr[j] = num_arr[j + 1];
-                num_arr[j + 1] = temp;
-            }
-        }
-    }
-}
-
-void largest_numbers(int n, int num_arr[], int size)
-{
-    if (num_arr == NULL || size <= 0 || n <= 0) {
+void largest_numbers(int n, const int arr[], int size) {
+    if (arr == NULL || size <= 0 || n <= 0) {
         printf("Invalid input.\n");
         return;
     }
@@ -28,17 +14,32 @@ void largest_numbers(int n, int num_arr[], int size)
         n = size;
     }
 
-    sort_array(num_arr, size);
+    bool selected[size];  // Track which elements are already picked
+    for (int i = 0; i < size; i++)
+        selected[i] = false;
 
     printf("Top %d largest number(s):\n", n);
-    for (int i = size - n; i < size; i++) {
-        printf("%d\t", num_arr[i]);
+    for (int count = 0; count < n; count++) {
+        int max = INT_MIN;
+        int maxIndex = -1;
+
+        for (int i = 0; i < size; i++) {
+            if (!selected[i] && arr[i] > max) {
+                max = arr[i];
+                maxIndex = i;
+            }
+        }
+
+        if (maxIndex != -1) {
+            selected[maxIndex] = true;
+            printf("%d\t", arr[maxIndex]);
+        }
     }
+
     printf("\n");
 }
 
-int main()
-{
+int main() {
     int num_array[] = {14, 12, 57, 11, 18, 16};
     int size = sizeof(num_array) / sizeof(num_array[0]);
 
