@@ -3,13 +3,13 @@
 
 /*
 Rule:
-1. if a == b --> true
+1. if a == b --> false
 2. if a < b & b - a <= 6 --> true
 */
 
 void possible_bonus(int a, int b)
 {
-    if (b - a >= 0 && b - a <= 6)
+    if (a < b && b - a <= 6)
         printf("true\n");
     else
         printf("false\n");
@@ -17,6 +17,6 @@ void possible_bonus(int a, int b)
 
 int main()
 {
-    int a = 5, b = 3;
+    int a = 3, b = 7;
     possible_bonus(a, b);
 }
