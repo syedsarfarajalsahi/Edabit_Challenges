@@ -19,6 +19,6 @@ Here is the rule for this calculation:
 
 int main()
 {
-    int steps = 5;
+    int steps = 10;
     printf("%d", box_seq(steps));
 }
