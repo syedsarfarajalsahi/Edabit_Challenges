@@ -1,17 +1,26 @@
 #include <stdio.h>
 
-int million_months(int first_month_paycheck, int multiplier){
+double million_in_month(double first_month_paycheck, double multiplier) {
+    double savings = 0;
+    double paycheck = first_month_paycheck;
+    int months = 0;
 
-}
-
-int main(){
-    int i, j=10, k=2, result;
-    for(i=0;i<10;i++){
-        result = j*k;
-
+    while (savings <= 1000000) {
+        savings += paycheck;
+        months++;
+        paycheck *= multiplier;
     }
+
+    return months;
 }
 
+int main()
+{
+    double first_month_paycheck = 100, multiplier = 1.01;
+    printf("%d", million_in_month(first_month_paycheck, multiplier));
+}
 
+/*
 10, 2
-10, 20, 40, 80, 160, 320, 640, 1280, 2560, 5120, 10240, 
+10, 20+10=30, 60+30=90, 180+90=270, 540+270=810, ...
+*/
