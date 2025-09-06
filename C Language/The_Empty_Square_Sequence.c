@@ -13,6 +13,13 @@ int empty_Sq(int step)
 
 int main()
 {
-    int step = 10;
-    printf("No. of empty square is %d", empty_Sq(step));
+    int step = -10;
+    if (step < 0)
+    {
+        printf("Enter only the positive integer");
+    }
+    else
+    {
+        printf("No. of empty square is %d", empty_Sq(step));
+    }
 }
