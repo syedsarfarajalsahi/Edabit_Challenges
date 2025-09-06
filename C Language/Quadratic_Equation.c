@@ -5,7 +5,7 @@
 int quadratic_equation(int a, int b, int c)
 {
     int D = sqrt(pow(b, 2) - ((a * c) * 4));
-    int root = (D - b)/(a*2);
+    int root = (D - b)/(a*2); // only the positive part
     return root;
 }
 
