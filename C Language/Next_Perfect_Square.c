@@ -17,6 +17,6 @@ int next_Square(int squared_number)
 
 int main()
 {
-    int n = 114;
+    int n = 196;
     printf("%d", next_Square(n));
 }
